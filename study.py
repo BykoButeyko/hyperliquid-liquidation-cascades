@@ -100,6 +100,8 @@ def main(source="live"):
     cas = cz.decluster(cz.cascades(cz.episodes(liq), cz.thresholds(liq)))
     print(f"{len(liq)} liquidations, {len(cas)} declustered cascades in {cas.event.nunique()} market events")
     print(cas.groupby("coin").size().to_string())
+    if cas.empty:
+        return
     rng = np.random.default_rng(7)
     m = measure(cas, closes(db, "bars" if live else "bars_1m"), rng)
     with pd.option_context("display.width", 200, "display.max_columns", 30):
