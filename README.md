@@ -6,6 +6,8 @@ No findings yet. The study covers only data my collector recorded from 5 Novembe
 
 This is descriptive research, not trading advice.
 
+Related: [how much of the bitcoin ETF bid is a basis trade](https://bykobuteyko.com/research/bitcoin-etf-basis/).
+
 ## How I find liquidations
 
 The public trade stream does not mark liquidations. The flag sits on individual fills, which the API only returns per user. [SOURCE.md](SOURCE.md) lists what I checked against live data. The full record of every liquidation sits in requester-pays S3 archives (Hyperliquid's own and Hydromancer's) and in Dune's tables. I skipped all of them: the S3 buckets bill the downloader, and Dune's Hyperliquid tables need a trial that asks for a card. `archive.py` and `dune.py` can load those sources, but I haven't run either. Instead the collector watches HLP's liquidator vault and the nine largest market makers on these four coins. A maker's fill carries the liquidation tag when it takes the other side of one. That gives a sample of liquidations with exact timestamps, not the full record.
