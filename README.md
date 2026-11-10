@@ -1,6 +1,6 @@
 # Liquidation cascades on Hyperliquid
 
-I study how forced liquidations on Hyperliquid chain into cascades on BTC, ETH, SOL and HYPE perps: how often it happens, what comes before it, how far price moves, how much of the move comes back, and whether the liquidation levels my whale-positioning dashboard maps point to where cascades happen.
+I study how forced liquidations on Hyperliquid chain into cascades on BTC, ETH, SOL and HYPE perps: how often it happens, what comes before it, how far price moves, how much of the move comes back, and whether the liquidation levels my [whale-positioning dashboard](https://github.com/BykoButeyko/hyperliquid-whale-positioning) maps point to where cascades happen.
 
 No findings yet. The study covers only data my collector recorded from 5 November 2026 onward, plus what Hyperliquid's free API returns (hourly funding). I don't use the paid archives, so there is no history before that date.
 
