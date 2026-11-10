@@ -1,0 +1,15 @@
+[Unit]
+Description=hl-liquidations websocket collector
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=hlliq
+WorkingDirectory=/home/hlliq/hl-liquidations
+ExecStart=/home/hlliq/hl-liquidations/.venv/bin/python collector.py
+Restart=always
+RestartSec=10
+MemoryMax=300M
+
+[Install]
+WantedBy=multi-user.target
